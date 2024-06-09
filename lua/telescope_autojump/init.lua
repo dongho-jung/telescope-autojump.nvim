@@ -20,6 +20,7 @@ local autojump = function(opts)
                   actions.select_default:replace(function()
                     local selected_entry = action_state.get_selected_entry()
                     actions.close(prompt_bufnr)
+                    print(vim.inspect(selected_entry))
                     vim.api.nvim_set_current_dir(selected_entry)
                   end)
                   return true
