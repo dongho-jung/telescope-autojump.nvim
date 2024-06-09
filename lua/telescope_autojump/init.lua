@@ -18,7 +18,7 @@ local autojump = function(opts)
                 sorter = conf.generic_sorter(opts),
                 attach_mappings = function(prompt_bufnr)
                   actions.select_default:replace(function()
-                    local selection = action_state.get_selected_entry()
+                    local selected_entry = action_state.get_selected_entry()
                     actions.close(prompt_bufnr)
                     vim.api.nvim_set_current_dir(selected_entry.cwd)
                   end)
